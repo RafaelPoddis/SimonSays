@@ -157,6 +157,7 @@ public class MainScript : MonoBehaviour
                     highscore.text = "Highscore: " + PlayerPrefs.GetInt("HiScore");
 
                     correct.Play();
+                    playing = false;
                     StartCoroutine(WaitBetweenSequences()); // Uso de Coroutine para dar o tempo entre o input do jogador e a nova sequencia
                 }
             }
@@ -177,7 +178,5 @@ public class MainScript : MonoBehaviour
         yield return new WaitForSeconds(timerbetweensequence);
 
         NewSequence();
-
-        playing = false;
     }
 }
